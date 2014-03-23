@@ -7,7 +7,7 @@ make sure you have the `devtools` package and run `install_github('amazonreviews
 Then you can fetch Amazon reviews by product ID:
 
 ````R
-revs <- fetch_amazon_reviews(1449316956); print(tail(revs[, 1:5]))
+revs <- fetch_amazon_reviews(1449316956); print(tail(revs[, 1:6]))
 
 #    helpful_count helpful_total stars           author                                      title              date
 # 19             1             1     3     Susan Donath Only buy this if you want to learn ggplot2 February 16, 2014
