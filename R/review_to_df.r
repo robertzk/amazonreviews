@@ -8,6 +8,7 @@ review_to_df <- function(review) {
   data.frame(
     helpful_count = if (helpfulness) parse_float(review[[2]]) else NA,
     helpful_total = if (helpfulness) parse_float(gsub('.* of ', '', xmlValue(review[[2]]))) else NA,
+    stars         = parse_float(review[[offset + 2]][[2]]),
     author        = xmlValue(review[[offset + 4]][[2]][[2]][[1]][[1]]),
     title         = xmlValue(review[[offset + 2]][[4]][[1]]),
     date          = xmlValue(review[[offset + 2]][[4]][[3]]),
