@@ -7,7 +7,7 @@ make sure you have the `devtools` package and run `install_github('amazonreviews
 Then you can fetch Amazon reviews by product ID:
 
 ````R
-revs <- fetch_amazon_reviews(1449316956); print(revs[1:6, 1:5])
+revs <- fetch_amazon_reviews(1449316956); print(tail(revs[, 1:5]))
 
 #   helpful_count helpful_total           author                                        title              date
 #   1            18            19      Ravi Aranke Treasure trove of graphing ideas and recipes  January 10, 2013
