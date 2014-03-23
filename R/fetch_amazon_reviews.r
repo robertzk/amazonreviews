@@ -24,7 +24,6 @@ fetch_amazon_reviews <- function(id, page = 1) {
 
   reviews <- as.vector(xpathSApply(parsed.html, '//table[@id="productReviews"]/tr/td/div'))
   reviews_df <- do.call(rbind, lapply(reviews, review_to_df))
-  browser()
   do.call(rbind, append(more_reviews, list(reviews_df)))
 }
 
