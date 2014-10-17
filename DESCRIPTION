@@ -10,5 +10,7 @@ Imports:
     RCurl,
     XML,
     stringr
+Suggests:
+    testthat
 License: GPL (>= 2)
 LazyData: true
