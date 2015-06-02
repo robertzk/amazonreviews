@@ -1,7 +1,7 @@
 Package: amazonreviews
 Title: R package for grabbing Amazon reviews.
 Description: Fetch Amazon reviews in a data.frame format
-Version: 0.1
+Version: 0.1.1
 Authors@R: c(person("Robert", "Krzyzanowski", email = "technoguyrob@gmail.com",
     role = c("aut", "cre")))
 Depends:
