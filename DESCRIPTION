@@ -8,8 +8,8 @@ Depends:
     R (>= 3.0.0)
 Imports:
     RCurl,
-    XML,
-    stringr
+    stringr,
+    XML
 Suggests:
     testthat
 License: GPL (>= 2)
