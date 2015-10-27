@@ -1,6 +1,9 @@
 R Amazon Reviews [![Build Status](https://travis-ci.org/robertzk/amazonreviews.svg?branch=master)](https://travis-ci.org/robertzk/amazonreviews)
 =============
 
+**Note**: This package is officially deprecated, Amazon has changed
+their format to generate random HTML and prevent scraping.
+
 Fetch a data.frame of reviews for an Amazon product using R. To install from this Github,
 make sure you have the `devtools` package and run `install_github('amazonreviews', 'robertzk')`. 
 
