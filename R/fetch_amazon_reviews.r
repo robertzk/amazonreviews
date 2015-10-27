@@ -15,13 +15,13 @@ fetch_amazon_reviews <- function(id, page = 1) {
   parsed.html <- XML::htmlParse(raw.html)
 
   if (page == 1) {
-    pages <- as.vector(XML::xpathSApply(parsed.html, "//div[@class='CMpaginate']"))[[1]]
-    page_count <- as.integer(gsub('.*([0-9]+)', '\\1', gsub(' \\| Next.*$', '', xmlValue(pages[[2]]))))
+    pages <- as.vector(XML::xpathSApply(parsed.html, "//ul[@class='a-pagination']"))[[1]]
+    page_count <- as.integer(xmlValue(pages[[length(xmlChildren(pages)) - 1]]))
     more_reviews <- lapply(seq_len(page_count - 1) + 1,
                          function(page_num) fetch_amazon_reviews(id, page = page_num))
   } else more_reviews <- NULL
 
-  reviews <- as.vector(XML::xpathSApply(parsed.html, '//table[@id="productReviews"]/tr/td/div'))
+  reviews <- as.vector(XML::xpathSApply(parsed.html, "//div[@id=\"cm_cr-review_list\"]/div[@class=\"a-section review\"]"))
   reviews_df <- do.call(rbind, lapply(reviews, review_to_df))
   do.call(rbind, append(more_reviews, list(reviews_df)))
 }
